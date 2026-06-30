@@ -35,6 +35,15 @@
             }
 
             Console.WriteLine("\nThe application closed.");
+
+            CreateStore();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
+
+        static void CreateStore()
+        {
+            Store store2 = new Store("Sport Shoes", "11 Petlyury st.", "Shoes");
         }
     }
 
@@ -94,6 +103,7 @@
         ~Store()
         {
             Dispose(false);
+            Console.WriteLine($"Destructor. Store was deleted '{Name}'.");
         }
     }
 }
