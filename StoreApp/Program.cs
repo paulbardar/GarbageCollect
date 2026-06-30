@@ -99,7 +99,6 @@
             Console.WriteLine($"[Dispose] Store '{Name}' closed and Garbage Cleaned.\n");
         }
 
-        // Деструктор (фіналізатор)
         ~Store()
         {
             Dispose(false);
